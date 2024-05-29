@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 
 <head>
@@ -12,8 +12,6 @@
   <link type="text/css" rel="stylesheet" href="styles/home.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
   <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-
-    
 </head>
 
 <body>
@@ -384,7 +382,7 @@
         <div class="newsletter__form">
           <form action="/submit" method="post">
             <label for="email">
-              <input type="email" placeholder="Din E-postadress">
+              <input type="email" name="email" placeholder="Din E-postadress" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" minlength="8" maxlength="50">
             </label>
             <button type="submit">Gå med</button>
           </form>
