@@ -19,11 +19,12 @@
   <!-- Nav Section -->
   <%- include ("../partials/header.ejs") %>
   <!-- Booking Section -->
+
   <section id="form">
     <div class="container">
       <h3 class="form__title">Book Table</h3>
       <div class="form__wrapper">
-        <form action="book-a-table" method="POST" netlify>
+        <form action="book-a-table" method="POST" netlify class="js-bookingForm">
           <div class="form__group">
             <label for="firstName">First Name</label>
             <input type="text" id="firstName" name="firstName" required pattern="^[A-Za-zÀ-ÖØ-öø-ÿ' -]+$" minlength="1" maxlength="30">
@@ -74,6 +75,7 @@
         </form>
       </div>
     </div>
+
   </section> 
   
 

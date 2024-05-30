@@ -83,3 +83,21 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+//Handling form submission pop-up
+//Still testing
+document.addEventListener('DOMContentLoaded', function() {
+    const http = new XMLHttpRequest();
+    http.open("GET", "http://localhost:3000", true);
+
+    http.onreadystatechange = () => {
+        if (http.readyState == 4 && http.status == 200) {
+            console.log(http.responseText) 
+        }
+    }
+
+    http.onerror = () => {
+        console.log("Error retrieving data")
+    }
+    http.send()
+
+});
