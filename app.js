@@ -76,18 +76,34 @@ app.post(
 app.post(
     "/book-a-table",
     body("firstName").notEmpty(),
-    body("lastName").notEmpty(), 
+    body("lastName").notEmpty(),
     body("email").notEmpty().trim().isEmail().withMessage("Invalid email format"),
     body("guestNumber").notEmpty(),
+    body("tableType").notEmpty(),
+    body("placement").notEmpty(),
+    body("date").notEmpty(),
+    body("time").notEmpty(),
     async (req, res) => {
-        const result = validationResult(req)
+        const result = validationResult(req);
         if (!result.isEmpty()) {
-            res.status(400).json({errors: result.array()})
+            return res.status(400).json({ errors: result.array() });
         }
 
+        const { firstName, lastName, email, tableType, guestNumber, placement, date, time, note } = req.body;
 
-        //Stopped HERE!!!!!!!!!!
-})
+        try {
+            await db.query(
+                "INSERT INTO bookings (first_name, last_name, email, guest_number, placement, date_booked, time_booked, note, table_type) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)",
+                [firstName, lastName, email, guestNumber, placement, date, time, note, tableType]
+            );
+            console.log("Data appended...");
+            return res.status(201).json({ message: "Booking added successfully" });
+        } catch (error) {
+            console.error("Database insertion error:", error);
+            return res.status(500).json({ errors: [{ msg: "Error appending data to database" }] });
+        }
+    }
+);
 
 app.listen(port, () => {
     console.log(`Listening on port: ${port}`);

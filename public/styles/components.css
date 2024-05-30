@@ -109,7 +109,13 @@
 .primary-btn {
 	color: var(--white-1);
 	background: var(--red);
+	cursor: pointer;
 }
+
+.primary-btn:hover {
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 @media only screen and (min-width: 700px) {
 	.btn {
 		padding: 1.3rem 2rem;
