@@ -18,8 +18,8 @@ const db = new pg.Client({
     port: 5432
 });
 
-db.connect()
-    .catch((error) => console.log("Database connection error:", error));
+// db.connect()
+//     .catch((error) => console.log("Database connection error:", error));
 
 
 // Homepage
