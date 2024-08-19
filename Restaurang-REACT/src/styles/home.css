@@ -82,9 +82,9 @@
 	width: 100%;
 	position: relative;
 	margin: 0 auto;
-  }
-  
-  .wrapper i {
+}
+
+.wrapper i {
 	height: 50px;
 	width: 50px;
 	background: #fff;
@@ -96,15 +96,15 @@
 	font-size: 1.25rem;
 	transform: translateY(-50%);
 	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.23);
-  }
-  
-  .wrapper i:first-child {
+}
+
+.wrapper i:first-child {
 	left: -22px;
-  }
-  .wrapper i:last-child {
+}
+.wrapper i:last-child {
 	right: -22px;
-  }
-  .wrapper .carousel {
+}
+.wrapper .carousel {
 	display: grid;
 	grid-auto-flow: column;
 	grid-auto-columns: calc((100% / 3) - 12px);
@@ -115,29 +115,29 @@
 	scrollbar-width: none;
 	user-select: none;
 	cursor: pointer;
-  }
-  .carousel::-webkit-scrollbar {
+}
+.carousel::-webkit-scrollbar {
 	display: none;
-  }
-  .carousel.no-transition {
+}
+.carousel.no-transition {
 	scroll-behavior: auto;
-  }
-  .carousel.dragging {
+}
+.carousel.dragging {
 	scroll-snap-type: none;
 	scroll-behavior: auto;
-  }
-  .carousel.dragging .card {
+}
+.carousel.dragging .card {
 	cursor: grab;
 	user-select: none;
-  }
-  
-  .carousel :where(.card, .img) {
+}
+
+.carousel :where(.card, .img) {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-  }
-  
-  .carousel .card {
+}
+
+.carousel .card {
 	scroll-snap-align: start;
 	height: 342px;
 	list-style: none;
@@ -146,42 +146,42 @@
 	padding-bottom: 15px;
 	flex-direction: column;
 	border-radius: 8px;
-  }
-  .carousel .card .img {
+}
+.carousel .card .img {
 	height: 148px;
 	width: 148px;
 	border-radius: 50%;
-  }
-  .card .img img {
+}
+.card .img img {
 	width: 140px;
 	height: 140px;
 	border-radius: 50%;
 	object-fit: cover;
 	border: 4px solid #fff;
-  }
-  
-  .card h2 {
+}
+
+.card h2 {
 	font-weight: 500;
 	font-size: 1.56rem;
 	margin: 30px 0 5px;
-  }
-  
-  .card span {
+}
+
+.card span {
 	color: #6a6d78;
 	font-size: 1.31rem;
-  }
-  
-  @media screen and (max-width: 900px) {
+}
+
+@media screen and (max-width: 900px) {
 	.wrapper .carousel {
-	  grid-auto-columns: calc((100% / 2) - 9px);
+	grid-auto-columns: calc((100% / 2) - 9px);
 	}
-  }
-  @media screen and (max-width: 600px) {
+}
+@media screen and (max-width: 600px) {
 	.wrapper .carousel {
-	  grid-auto-columns: 100%;
+	grid-auto-columns: 100%;
 	}
-  }
-  
+}
+
 
 /* Our Specials Section Styles */
 #ourSpecials {
@@ -202,13 +202,13 @@
 	padding-top: 5rem;
 	border-radius: 12px;
 	width: 45%;
+	height: 100%;
 	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
 }
 .ourSpecials__item__img {
-	margin-top: calc(-50% - 2rem);
-	margin-bottom: 2rem;
-	border-radius: 12px;
-	height: 150px;
+	max-height: 150px;
 	overflow: hidden;
 }
 .ourSpecials__item__img img {

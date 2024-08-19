@@ -1,15 +1,26 @@
-import React from "react";
-import Nav from "../components/recurrents/nav"
-import Footer from "../components/recurrents/footer"
-import webAssets from "../components/components";
+import Nav from "../components/partials/nav"
+import Footer from "../components/partials/footer"
+// import webAssets from "../components/components";
 import "../styles/globalStyles.css"
 import "../styles/components.css";
 import "../styles/menu.css"
+import Card from "../components/menuCard";
 
 
-export default function Menu(props) {
-    return(
-        <main className="contentHolder">
+export default function Menu() {
+    
+    const array = []
+    for (let i = 0; i < 8; i++) {
+        array.push(i)
+    }
+
+    const array2 = []
+    for (let i = 0; i < 6; i++) {
+        array2.push(i)
+    }
+
+    return(        
+        <>
             <Nav />
             <section id="page__title" >
                 <div className="container">
@@ -23,36 +34,7 @@ export default function Menu(props) {
                 <div className="container">
                     <h3 className="ourSpecials__title">Våra Specialiteter</h3>
                     <div className="ourSpecials__wrapper">
-                        <div className="ourSpecials__item">
-                            <div className="ourSpecials__item__img">
-                                <img src="/food-3.png" alt="food img" />
-                            </div>
-
-                            <div className="ourSpecials__item__info">
-                                <h3 className="ourSpecials__item__title">
-                                Sötpotatisfries Skål
-                                </h3>
-                                <h4 className="ourSpecials__item__price">$12</h4>
-                                <div className="ourSpecials__item__stars">
-                                <img src="/3star.png" alt="3 stars" />
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div className="ourSpecials__item">
-                            <div className="ourSpecials__item__img">
-                                <img src="/food-1.png" alt="food img" />
-                            </div>
-                            <div className="ourSpecials__item__info">
-                                <h3 className="ourSpecials__item__title">
-                                Vegansk Salladsskål
-                                </h3>
-                                <h4 className="ourSpecials__item__price">$16</h4>
-                                <div className="ourSpecials__item__stars">
-                                    <img src="./3star.png" alt="3 stars" />
-                                </div>
-                            </div>
-                        </div>
+                        <Card />
                     </div>
                 </div>
             </section>
@@ -63,48 +45,9 @@ export default function Menu(props) {
                         Topp Rätter
                     </h2>
                     <div className="dishGrid__wrapper">
-                        <div className="dishGrid__item">
-                            <div className="dishGrid__item__img">
-                                <img src="/food-1.png" alt="food img" />
-                        </div>
-                        <div className="dishGrid__item__info">
-                            <h3 className="dishGrid__item__title">
-                            Het Grön Skål
-                            </h3>
-                            <h3 className="dishGrid__item__price">$12</h3>
-                            <div className="dishGrid__item__stars">
-                            <img src="/3star.png" alt="3 star" />
-                            </div>
-                        </div>
-                        </div>
-                        <div className="dishGrid__item">
-                            <div className="dishGrid__item__img">
-                                <img src="/food-1.png" alt="food img" />
-                            </div>
-                            <div className="dishGrid__item__info">
-                                <h3 className="dishGrid__item__title">
-                                Het Grön Skål
-                                </h3>
-                                <h3 className="dishGrid__item__price">$14</h3>
-                                <div className="dishGrid__item__stars">
-                                    <img src="/3star.png" alt="3 star" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="dishGrid__item">
-                            <div className="dishGrid__item__img">
-                                <img src="/food-1.png" alt="food img" />
-                            </div>
-                            <div className="dishGrid__item__info">
-                                <h3 className="dishGrid__item__title">
-                                Het Grön Skål
-                                </h3>
-                                <h3 className="dishGrid__item__price">$14</h3>
-                                <div className="dishGrid__item__stars">
-                                    <img src="/3star.png" alt="3 star" />
-                                </div>
-                            </div>
-                        </div>
+                        {array.map((index) => (
+                                <Card key={index}/>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -115,95 +58,9 @@ export default function Menu(props) {
                         Frukost
                     </h2>
                         <div className="dishGrid__wrapper">
-                            <div className="dishGrid__item" >
-                                <div className="dishGrid__item__img">
-                                    <img src="/food-1.png" alt="food img" />
-                                </div>
-                                <div className="dishGrid__item__info">
-                                    <h3 className="dishGrid__item__title">
-                                    Het Grön Skål
-                                    </h3>
-                                    <h3 className="dishGrid__item__price">$12</h3>
-                                    <div className="dishGrid__item__stars">
-                                        <img src="/3star.png" alt="3 star" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="dishGrid__item">
-                                <div className="dishGrid__item__img">
-                                <img src="/food-1.png" alt="food img" />
-                            </div>
-                                <div className="dishGrid__item__info">
-                                    <h3 className="dishGrid__item__title">
-                                    Het Grön Skål
-                                    </h3>
-                                    <h3 className="dishGrid__item__price">$12</h3>
-                                    <div className="dishGrid__item__stars">
-                                        <img src="/3star.png" alt="3 star" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="dishGrid__item">
-                                <div className="dishGrid__item__img">
-                                    <img src="/food-1.png" alt="food img" />
-                                </div>
-                                <div className="dishGrid__item__info">
-                                    <h3 className="dishGrid__item__title">
-                                    Het Grön Skål
-                                    </h3>
-                                    <h3 className="dishGrid__item__price">$14</h3>
-                                    <div className="dishGrid__item__stars">
-                                    <img src="/3star.png" alt="3 star" />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="dishGrid__item">
-                                <div className="dishGrid__item__img">
-                                    <img src="/food-1.png" alt="food img" />
-                                </div>
-                                <div className="dishGrid__item__info">
-                                    <h3 className="dishGrid__item__title">
-                                    Het Grön Skål
-                                    </h3>
-                                    <h3 className="dishGrid__item__price">$12</h3>
-                                    <div className="dishGrid__item__stars">
-                                        <img src="/3star.png" alt="3 star" />
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div className="dishGrid__item">
-                            <div className="dishGrid__item__img">
-                                <img src="/food-1.png" alt="food img" />
-                            </div>
-                            <div className="dishGrid__item__info">
-                                <h3 className="dishGrid__item__title">
-                                Het Grön Skål
-                                </h3>
-                                <h3 className="dishGrid__item__price">$14</h3>
-                                <div className="dishGrid__item__stars">
-                                <img src="/3star.png" alt="3 star" />
-                                </div>
-                            </div>
-                            </div>
-
-                            <div className="dishGrid__item">
-                                <div className="dishGrid__item__img">
-                                    <img src="/food-1.png" alt="food img" />
-                                </div>
-                                <div className="dishGrid__item__info">
-                                    <h3 className="dishGrid__item__title">
-                                    Het Grön Skål
-                                    </h3>
-                                    <h3 className="dishGrid__item__price">$18</h3>
-                                    <div className="dishGrid__item__stars">
-                                        <img src="/3star.png" alt="3 star" />
-                                    </div>
-                                </div>
-                            </div>
+                            {array2.map((index) => (
+                                <Card key={index}/>
+                            ))}
                         </div>
                     </div>
             </section>
@@ -214,95 +71,9 @@ export default function Menu(props) {
                         Lunch
                     </h2>
                     <div className="dishGrid__wrapper">
-                        <div className="dishGrid__item">
-                            <div className="dishGrid__item__img">
-                                <img src="/food-1.png" alt="food img" />
-                            </div>
-                            <div className="dishGrid__item__info">
-                                <h3 className="dishGrid__item__title">
-                                Het Grön Skål
-                                </h3>
-                                <h3 className="dishGrid__item__price">$15</h3>
-                                <div className="dishGrid__item__stars">
-                                    <img src="/3star.png" alt="3 star" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="dishGrid__item">
-                            <div className="dishGrid__item__img">
-                                <img src="/food-1.png" alt="food img" />
-                            </div>
-                            <div className="dishGrid__item__info">
-                                <h3 className="dishGrid__item__title">
-                                Het Grön Skål
-                                </h3>
-                                <h3 className="dishGrid__item__price">$15</h3>
-                                <div className="dishGrid__item__stars">
-                                    <img src="/3star.png" alt="3 star" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="dishGrid__item">
-                            <div className="dishGrid__item__img">
-                                <img src="/food-1.png" alt="food img" />
-                            </div>
-                            <div className="dishGrid__item__info">
-                                <h3 className="dishGrid__item__title">
-                                Het Grön Skål
-                                </h3>
-                                <h3 className="dishGrid__item__price">$15</h3>
-                                <div className="dishGrid__item__stars">
-                                    <img src="/3star.png" alt="3 star" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="dishGrid__item">
-                            <div className="dishGrid__item__img">
-                                <img src="/food-1.png" alt="food img" />
-                            </div>
-                            <div className="dishGrid__item__info">
-                                <h3 className="dishGrid__item__title">
-                                Het Grön Skål
-                                </h3>
-                                <h3 className="dishGrid__item__price">$19</h3>
-                                <div className="dishGrid__item__stars">
-                                    <img src="/3star.png" alt="3 star" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="dishGrid__item">
-                            <div className="dishGrid__item__img">
-                                <img src="/food-1.png" alt="food img" />
-                            </div>
-                            <div className="dishGrid__item__info">
-                                <h3 className="dishGrid__item__title">
-                                Het Grön Skål
-                                </h3>
-                                <h3 className="dishGrid__item__price">$19</h3>
-                                <div className="dishGrid__item__stars">
-                                    <img src="/3star.png" alt="3 star" />
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="dishGrid__item">
-                            <div className="dishGrid__item__img">
-                                <img src="/food-1.png" alt="food img" />
-                            </div>
-                            <div className="dishGrid__item__info">
-                                <h3 className="dishGrid__item__title">
-                                Het Grön Skål
-                                </h3>
-                                <h3 className="dishGrid__item__price">$19</h3>
-                                <div className="dishGrid__item__stars">
-                                    <img src="/3star.png" alt="3 star" />
-                                </div>
-                            </div>
-                        </div>
+                        {array2.map((index) => (
+                            <Card key={index}/>
+                        ))}
                     </div>
                 </div>
             </section>
@@ -420,6 +191,6 @@ export default function Menu(props) {
             </section>
 
             <Footer />
-        </main>
+        </>
     )
 }

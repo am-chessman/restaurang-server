@@ -1,14 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&family=Raleway:wght@400;500;600&display=swap');
 
-html {
-	font-size: 10px;
-	overflow-x: hidden;
-}
-body {
-	background: url(/bg-img.avif);
-	overflow-x: hidden;
-	user-select: none;
-}
 section {
 	padding: 100px 0;
 }
